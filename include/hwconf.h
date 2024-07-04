@@ -1,0 +1,66 @@
+/*
+
+Board config for shutter controller.
+
+
+
+
+*/
+
+
+
+
+#if ARDUINO_USB_DCD_ON_BOOT
+#define DBGSERIAL Serial
+#else
+#define DBGSERIAL Serial0
+#endif
+
+
+#define BLE_NAME "ECO_SHUTTER_CONTROLLER"
+
+
+// PIN setting
+
+#define PIN_ADC1_CH3   4
+#define PIN_BATT_ADC   6
+#define PIN_ADC2_CH4   15
+#define PIN_TXD_485    17
+#define PIN_RXD_485    18
+#define PIN_TOUCH_1    9
+#define PIN_TOUCH_2    10
+#define PIN_TOUCH_3    11
+#define PIN_TOUCH_4    12
+#define PIN_FLASH_SYNC 35
+#define PIN_MAG_EN     36
+#define PIN_MAG_PWM_A  37
+#define PIN_MAG_PWM_B  38
+#define PIN_I2C_SCL    42
+#define PIN_I2C_SDA    41
+#define PIN_BUZZER     3
+
+
+
+// define some values
+
+#define BATTERY_MONITOR_RATIO 10
+#define PWM_FREQ 10000 // do not set more than 10k
+#define PWM_RESOLUTION 8
+#define MAX_SYNC_DELAY_US 500*1000
+#define MIN_SYNC_ACT_INTERVAL_MS 1
+#define MAX_TRIG_COUNTDOWN_S 30
+#define MAX_MAG_ACT_DURATION_US 500*1000
+#define MAX_MAG_ACT_INTERVAL_US 10*60*1000*1000
+#define MAG_ACT_DEAD_ZONE_US 20
+
+#define DEFAULT_SYNC_DELAY_US 100
+#define DEFAULT_SYNC_INTERVAL_MS 100
+#define DEFAULT_MAG_ACT_DURATION_US 100*1000
+#define DEFAULT_MAG_PUSH_FORCE 255
+#define DEFAULT_MAG_PULL_FORCE 255
+#define DEFAULT_SHUTTER_SPEED 15
+#define DEFAULT_SHUTTER_INTERVAL (uint32_t)(1000.0f/DEFAULT_SHUTTER_SPEED)
+#define DEFAULT_SHUTTER_COUNTDOWN 0
+#define DEFAULT_SHUTTER_OPEN_COMPENSTATION 0
+
+#define PREF_MAGIC 0x114514
